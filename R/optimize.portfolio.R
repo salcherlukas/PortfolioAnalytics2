@@ -1178,7 +1178,7 @@ optimize.portfolio <- optimize.portfolio_v2 <- function(
           target <- max_sr_opt(R=R, constraints=constraints, moments=moments, lambda_hhi=lambda_hhi, conc_groups=conc_groups, solver=solver, control=control)
           # need to set moments$mean=0 here because quadratic utility and target return is sensitive to returning no solution
           tmp_moments_mean <- moments$mean
-          moments$mean <- rep(0, length(moments$mean))
+          #moments$mean <- rep(0, length(moments$mean))
         }
         roi_result <- gmv_opt(R=R, constraints=constraints, moments=moments, lambda=lambda, target=target, lambda_hhi=lambda_hhi, conc_groups=conc_groups, solver=solver, control=control)
         weights <- roi_result$weights
